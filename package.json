@@ -39,7 +39,6 @@
     "underscore": "^1.8.3"
   },
   "devDependencies": {
-    "cli-color": "^0.3.3",
     "jshint": "^2.5.6",
     "pre-commit": "^0.0.9"
   },
