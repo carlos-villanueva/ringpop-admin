@@ -7,35 +7,30 @@ Version:
 Help:
 
   $ ringpop-admin --help
+  Usage: ringpop-admin [options] [command]
   
-    Usage: ringpop-admin [options] [command]
+  Command-line tools for Ringpop
   
+  Options:
+    -V, --version  output the version number
+    -h, --help     output usage information
   
-    Commands:
-  
-      checksums    Prints membership checksums
-      dist         Distribution of keyspace
-      dump         Dump membership information to disk
-      count        Counts members
-      leave        Makes node leave the cluster
-      list         List member information
-      lookup       Lookup a key in the ring
-      join         Makes node (re)join the cluster
-      status       Status of members in ring
-      partitions   Show partition information of a ring
-      top          General membership information
-      reap         Remove nodes marked as faulty from the cluster
-      heal         Start a partition heal coordinated by the coordinator node
-      collisions   Show hash collisions of a ring
-      help [cmd]   display help for [cmd]
-  
-    Command-line tools for Ringpop
-  
-    Options:
-  
-      -h, --help     output usage information
-      -V, --version  output the version number
-  
+  Commands:
+    checksums      Prints membership checksums
+    dist           Distribution of keyspace
+    dump           Dump membership information to disk
+    count          Counts members
+    leave          Makes node leave the cluster
+    list           List member information
+    lookup         Lookup a key in the ring
+    join           Makes node (re)join the cluster
+    status         Status of members in ring
+    partitions     Show partition information of a ring
+    top            General membership information
+    reap           Remove nodes marked as faulty from the cluster
+    heal           Start a partition heal coordinated by the coordinator node
+    collisions     Show hash collisions of a ring
+    help [cmd]     display help for [cmd]
     Discovery:
   
       Most of the commands can discover the ring via
