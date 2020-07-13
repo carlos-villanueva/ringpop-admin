@@ -27,17 +27,22 @@ var parseStatusCommand = require('./parser.js').parseStatusCommand;
 var printTable = require('./lib/table.js').print;
 
 function getDampScoreRange(allStats, statusMember) {
+    var scoreExists = Boolean;
     var lowest = Number.MAX_VALUE;
     var highest = 0;
 
     allStats.forEach(function each(stat) {
         stat.members.forEach(function each(member) {
+            scoreExists = false;
+
             if (member.address !== statusMember.address) return;
 
             var dampScore = member.dampScore;
             if (typeof dampScore === 'undefined') {
                 return;
             }
+
+            scoreExists = true;
 
             if (dampScore < lowest) {
                 lowest = dampScore;
@@ -48,6 +53,10 @@ function getDampScoreRange(allStats, statusMember) {
             }
         });
     });
+
+    if (!scoreExists) {
+        return 'DampScore could not be retrieved';
+    }
 
     return lowest + '..' + highest;
 }
